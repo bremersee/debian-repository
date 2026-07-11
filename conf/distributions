@@ -1,0 +1,9 @@
+Origin: Bremersee Debian Apt Repository
+Label: Bremersee
+Codename: trixie
+Suite: stable
+Architectures: amd64 arm64
+Components: main
+Description: The bremersee debian software repository
+DebIndices: Packages Release . .gz .bz2
+SignWith: 2E2D2A08EC503F764E5356382AEA725B6575A4C3
