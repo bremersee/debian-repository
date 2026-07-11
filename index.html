@@ -30,6 +30,42 @@
     <h3>Bremersee Debian Apt Repository</h3>
   </div>
 
+  <div class="card col-12 col-lg-8 mx-auto">
+    <div class="card-body">
+      <h5 class="card-title">Add Bremersee's official GPG key:</h5>
+      <div class="card-text">
+        <pre class="text-secondary">
+          <code>
+sudo apt update
+sudo apt install ca-certificates curl apt-transport-https
+sudo mkdir -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://debian.bremersee.org/bremersee.asc -o /etc/apt/keyrings/bremersee.asc
+sudo chmod a+r /etc/apt/keyrings/bremersee.asc</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="card col-12 col-lg-8 mx-auto mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Add the repository to Apt sources:</h5>
+      <div class="card-text">
+        <pre>
+          <code>
+<span class="text-secondary">sudo tee /etc/apt/sources.list.d/bremersee.sources</span> &lt;&lt;EOF
+Types: deb
+URIs: https://debian.bremersee.org/
+Suites: stable
+Components: main
+Signed-By: /etc/apt/keyrings/bremersee.asc
+EOF
+
+<span class="text-secondary">sudo apt update</span></code>
+        </pre>
+      </div>
+    </div>
+  </div>
+
 </main>
 <script type="text/javascript">
   //<![CDATA[
